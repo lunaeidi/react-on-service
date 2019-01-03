@@ -12,11 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2018_11_26_034546) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.string "address"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
